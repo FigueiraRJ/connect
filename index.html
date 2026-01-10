@@ -1,30 +1,161 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>CONNECTPAGS</title>
-  <!-- Redireciona após 5 segundos -->
-  <meta http-equiv="refresh" content="3;url=https://listinsolucoes.com.br/connectpags">
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lista de Convites</title>
+
+<style>
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 15%;
-    }
-    img.logo {
-      max-width: 160px;
-      margin-bottom: 20px;
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        margin: 0;
+        padding: 20px;
     }
 
-  </style>
+    h1 {
+        text-align: center;
+    }
+
+    .convite {
+        background: #fff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .convite-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .pessoa {
+        margin-top: 15px;
+        padding: 15px;
+        background: #fafafa;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+    }
+
+    .pessoa label {
+        font-weight: bold;
+        display: block;
+        margin-top: 8px;
+    }
+
+    .pessoa input[type="text"],
+    .pessoa input[type="email"],
+    .pessoa input[type="color"] {
+        width: 100%;
+        padding: 8px;
+        margin-top: 4px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        padding: 8px 14px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .editar {
+        background: #007bff;
+        color: white;
+    }
+
+    .salvar {
+        background: #28a745;
+        color: white;
+        margin-top: 10px;
+    }
+
+    /* Responsividade */
+    @media (max-width: 600px) {
+        .convite {
+            padding: 15px;
+        }
+        button {
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+</style>
 </head>
 <body>
-  <img src="https://figueirarj.github.io/connect/Pagbank.png" alt="Logo" class="logo">
-  <h1>Estamos carregando o formulário.</h1>
-  <p>Você será direcionando para a página de inscrição</p>
-  <p>Se o redirecionamento não acontecer automaticamente, <a href="https://listinsolucoes.com.br/connectpags">clique aqui</a>.</p>
+
+<h1>Lista de Convites</h1>
+
+<div id="listaConvites">
+
+    <!-- Exemplo de convite -->
+    <div class="convite">
+        <div class="convite-header">
+            <h2>Convite 1</h2>
+            <button class="editar" onclick="editarConvite(this)">Editar</button>
+        </div>
+
+        <div class="pessoa">
+            <label>Nome:</label>
+            <span class="view">João Silva</span>
+            <input class="edit" type="text" value="João Silva" style="display:none">
+
+            <label>Telefone:</label>
+            <span class="view">(21) 99999-0000</span>
+            <input class="edit" type="text" value="(21) 99999-0000" style="display:none">
+
+            <label>Email:</label>
+            <span class="view">joao@email.com</span>
+            <input class="edit" type="email" value="joao@email.com" style="display:none">
+
+            <label>Confirmado:</label>
+            <span class="view">Sim</span>
+            <input class="edit" type="checkbox" checked style="display:none">
+
+            <label>Cor Preferida:</label>
+            <span class="view">#ff0000</span>
+            <input class="edit" type="color" value="#ff0000" style="display:none">
+        </div>
+
+        <button class="salvar" onclick="salvarConvite(this)" style="display:none">Salvar</button>
+    </div>
+
+</div>
+
+<script>
+function editarConvite(botao) {
+    const convite = botao.closest(".convite");
+    convite.querySelectorAll(".view").forEach(el => el.style.display = "none");
+    convite.querySelectorAll(".edit").forEach(el => el.style.display = "block");
+
+    botao.style.display = "none";
+    convite.querySelector(".salvar").style.display = "block";
+}
+
+function salvarConvite(botao) {
+    const convite = botao.closest(".convite");
+    const views = convite.querySelectorAll(".view");
+    const edits = convite.querySelectorAll(".edit");
+
+    edits.forEach((input, index) => {
+        if (input.type === "checkbox") {
+            views[index].textContent = input.checked ? "Sim" : "Não";
+        } else {
+            views[index].textContent = input.value;
+        }
+    });
+
+    convite.querySelectorAll(".view").forEach(el => el.style.display = "block");
+    convite.querySelectorAll(".edit").forEach(el => el.style.display = "none");
+
+    botao.style.display = "none";
+    convite.querySelector(".editar").style.display = "block";
+}
+</script>
+
 </body>
 </html>
-
-
-
