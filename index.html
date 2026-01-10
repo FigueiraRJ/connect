@@ -38,12 +38,16 @@
     }
 
     .pessoa {
-        margin-top: 15px;
-        padding: 15px;
-        background: #fafafa;
-        border-radius: 8px;
-        border: 1px solid #ddd;
-    }
+    margin-top: 15px;
+    padding: 15px;
+    background: #fafafa;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 
     .pessoa label {
         font-weight: bold;
@@ -79,6 +83,36 @@
         color: white;
         margin-top: 10px;
     }
+
+    .campo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Título do campo */
+.campo label {
+    font-weight: bold;
+    width: 40%;
+}
+
+/* Valor exibido */
+.campo span.view {
+    width: 60%;
+}
+
+/* Inputs */
+.campo input.edit {
+    width: 60%;
+    padding: 6px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.campo input[type="checkbox"].edit {
+    width: auto;
+}
+
 </style>
 </head>
 <body>
