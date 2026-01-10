@@ -115,8 +115,6 @@
       background-color: #e0e0e0;
     }
 
-    /* Responsividade básica: os cards já quebram por causa do flex-wrap.
-       Ajustes extras para telas muito pequenas. */
     @media (max-width: 480px) {
       .convite {
         width: 100%;
@@ -183,4 +181,97 @@
           <div class="campo-linha">
             <span class="campo-label">Cor pref.:</span>
             <span class="campo-valor">
-              <input type="color" class="campo-cor" data-campo="cor" v
+              <input type="color" class="campo-cor" data-campo="cor" value="#00ff80" />
+            </span>
+          </div>
+        </div>
+
+        <div class="pessoa">
+          <div class="campo-linha">
+            <span class="campo-label">Nome:</span>
+            <span class="campo-valor campo-texto" data-campo="nome">Carla Mendes</span>
+          </div>
+          <div class="campo-linha">
+            <span class="campo-label">Telefone:</span>
+            <span class="campo-valor campo-texto" data-campo="telefone">+55 21 99999-0003</span>
+          </div>
+          <div class="campo-linha">
+            <span class="campo-label">E-mail:</span>
+            <span class="campo-valor campo-texto" data-campo="email">carla@example.com</span>
+          </div>
+          <div class="campo-linha">
+            <span class="campo-label">Confirmado:</span>
+            <span class="campo-valor">
+              <input type="checkbox" class="campo-checkbox" data-campo="confirmado" />
+            </span>
+          </div>
+          <div class="campo-linha">
+            <span class="campo-label">Cor pref.:</span>
+            <span class="campo-valor">
+              <input type="color" class="campo-cor" data-campo="cor" value="#0000ff" />
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="botoes-convite">
+        <button class="btn-editar">Editar</button>
+        <button class="btn-salvar" style="display:none;">Finalizar edição</button>
+      </div>
+    </div>
+
+    <!-- Convite 2 -->
+    <div class="convite" data-editando="false">
+      <div class="convite-header">
+        <span class="convite-titulo">Convite 2 - Aniversário</span>
+      </div>
+      <div class="pessoas-lista">
+        <div class="pessoa">
+          <div class="campo-linha">
+            <span class="campo-label">Nome:</span>
+            <span class="campo-valor campo-texto" data-campo="nome">João Pereira</span>
+          </div>
+          <div class="campo-linha">
+            <span class="campo-label">Telefone:</span>
+            <span class="campo-valor campo-texto" data-campo="telefone">+55 21 98888-1001</span>
+          </div>
+          <div class="campo-linha">
+            <span class="campo-label">E-mail:</span>
+            <span class="campo-valor campo-texto" data-campo="email">joao@example.com</span>
+          </div>
+          <div class="campo-linha">
+            <span class="campo-label">Confirmado:</span>
+            <span class="campo-valor">
+              <input type="checkbox" class="campo-checkbox" data-campo="confirmado" checked />
+            </span>
+          </div>
+          <div class="campo-linha">
+            <span class="campo-label">Cor pref.:</span>
+            <span class="campo-valor">
+              <input type="color" class="campo-cor" data-campo="cor" value="#ff8800" />
+            </span>
+          </div>
+        </div>
+
+        <div class="pessoa">
+          <div class="campo-linha">
+            <span class="campo-label">Nome:</span>
+            <span class="campo-valor campo-texto" data-campo="nome">Mariana Costa</span>
+          </div>
+          <div class="campo-linha">
+            <span class="campo-label">Telefone:</span>
+            <span class="campo-valor campo-texto" data-campo="telefone">+55 21 98888-1002</span>
+          </div>
+          <div class="campo-linha">
+            <span class="campo-label">E-mail:</span>
+            <span class="campo-valor campo-texto" data-campo="email">mariana@example.com</span>
+          </div>
+          <div class="campo-linha">
+            <span class="campo-label">Confirmado:</span>
+            <span class="campo-valor">
+              <input type="checkbox" class="campo-checkbox" data-campo="confirmado" />
+            </span>
+          </div>
+          <div class="campo-linha">
+            <span class="campo-label">Cor pref.:</span>
+            <span class="campo-valor">
+              <input ty
